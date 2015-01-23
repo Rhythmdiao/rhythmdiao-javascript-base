@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>FullScreen Backgrounds - fullPage.js</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="Resource-type" content="Document"/>
+    <link rel="icon" href="/app/images/avatar.png"/>
+    <link rel="stylesheet" href="/app/styles/icono.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/app/styles/jquery.fullPage.css"/>
+    <link rel="stylesheet" type="text/css" href="/app/styles/waves.css"/>
+    <link rel="stylesheet" type="text/css" href="/app/styles/main.css"/>
+    <script src="/app/scripts/requirejs/require.js"
+            data-main="/app/scripts/config.js"></script>
+</head>
+<body ng-controller="controller">
+
+<ul id="menu">
+    <li data-menuanchor="firstPage"><a href="#profile">Profile</a></li>
+    <li data-menuanchor="secondPage"><a href="#experience">Experience</a></li>
+    <li data-menuanchor="thirdPage"><a href="#education">Education</a></li>
+    <li data-menuanchor="fourthPage"><a href="#education">Skill</a></li>
+    <li data-menuanchor="fifthPage"><a href="#education">Summary</a></li>
+</ul>
+
+
+<div id="fullpage">
+    <div class="section" id="profile">
+        <div class="wrap shadow waves-effect">
+            <data-profile/>
+        </div>
+    </div>
+    <div class="section" id="experience">
+        <div class="slide" id="slide1">
+            <div class="intro">
+                <h1>Experience</h1>
+
+                <p></p>
+            </div>
+        </div>
+        s
+        <div class="slide" id="slide2">
+            <h1>Slide 2</h1>
+        </div>
+
+    </div>
+    <div class="section" id="education">
+        <div class="intro">
+            <h1>Education</h1>
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="waves-effect"></div>
+</body>
+</html>
