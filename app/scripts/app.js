@@ -6,7 +6,11 @@ define(['jquery', 'angular', 'waves', 'fullpage'], function ($, angular) {
             language: 'en',
             content: function (language) {
                 var _language = (language === 'en' || language === 'chn') ? language : cv.language;
-                return $http.get('cv/' + _language + '.json');
+                return $http.get('cv/' + _language + '.json', {cache: true});
+            },
+            changeLanguage: function () {
+                cv.language = cv.language === 'en' ? 'chn' : 'en';
+                return cv.content(cv.language);
             }
         };
         return cv;
@@ -17,8 +21,14 @@ define(['jquery', 'angular', 'waves', 'fullpage'], function ($, angular) {
         cvService.content('en').success(function (data) {
             $scope.cv = data;
         }).error(function (data) {
-
         });
+
+        $scope.changeLanguage = function () {
+            cvService.changeLanguage().success(function (data) {
+                $scope.cv = data;
+            }).error(function (data) {
+            });
+        }
     }]);
 
     app.directive('profile', function () {
@@ -36,8 +46,15 @@ define(['jquery', 'angular', 'waves', 'fullpage'], function ($, angular) {
 
     $('#fullpage').fullpage({
         // anchors: ['profile', 'experience', 'education'],
+        sectionsColor: ['#fff', '#0cf', '#09f', '#06f', '##03f'],
+        menu: '#menu',
+        navigation: true,
+        slidesNavigation: true,
         afterRender: function () {
             Waves.displayEffect();
+        },
+        afterResize: function () {
+            $.fn.fullpage.reBuild();
         }
     });
 });

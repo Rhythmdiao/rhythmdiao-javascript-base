@@ -186,3 +186,32 @@ body {
     color: #3f3f3f;
     font-size: 1.2em;
 }
+
+/**/
+#infoMenu{
+    height: 20px;
+    color: #f2f2f2;
+    position:fixed;
+    z-index:3;
+    top:0;
+    width:100%;
+    text-align:right;
+    font-family: arial,helvetica,serif;
+    font-size:0.9em;
+    padding:8px 0 8px 0;
+}
+#infoMenu ul{
+    padding: 0 40px;
+}
+#infoMenu li a{
+    display: block;
+    margin: 0 22px 0 0;
+    color: #333;
+}
+#infoMenu li a:hover{
+    text-decoration:underline;
+}
+#infoMenu li{
+    display:inline-block;
+    position:relative;
+}

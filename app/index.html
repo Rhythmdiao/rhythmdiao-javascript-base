@@ -28,20 +28,20 @@
 
 <div id="fullpage">
     <div class="section" id="profile">
-        <div class="wrap shadow waves-effect">
+        <div class="wrap shadow">
             <data-profile/>
         </div>
     </div>
     <div class="section" id="experience">
-        <div class="slide" id="slide1">
+        <div class="slide" id="slide1" data-anchor="slide1">
             <div class="intro">
                 <h1>Experience</h1>
 
                 <p></p>
             </div>
         </div>
-        s
-        <div class="slide" id="slide2">
+
+        <div class="slide" id="slide2" data-anchor="slide2">
             <h1>Slide 2</h1>
         </div>
 
@@ -53,6 +53,10 @@
     </div>
 </div>
 
-<div id="footer" class="waves-effect"></div>
+<div id="infoMenu">
+    <ul>
+        <li><button ng-click="changeLanguage()">{{cv.language}}</button></li>
+    </ul>
+</div>
 </body>
 </html>
