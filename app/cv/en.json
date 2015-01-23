@@ -1,10 +1,11 @@
-{"profile": {
-    "firstName": "Yuxing",
-    "lastName": "Ma",
-    "nickName": "rhythmdiao",
-    "email": "rhythmdiao@163.com",
-    "location": "Beijing, China"
-
-}, "education": {
-
-}}
+{"language": "中文",
+    "profile": {
+        "firstName": "Yuxing",
+        "lastName": "Ma",
+        "nickName": "rhythmdiao",
+        "email": "rhythmdiao@163.com",
+        "location": "Beijing, China"
+    },
+    "education": {
+    }
+}
