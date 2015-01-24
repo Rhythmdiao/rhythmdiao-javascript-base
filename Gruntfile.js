@@ -345,6 +345,25 @@ module.exports = function (grunt) {
                     bowerOptions: {}
                 }
             }
+        },
+        coffee: {
+            compile: {
+                options: {
+                    bare:true,
+                    join:true,
+                    sourceMap:false
+                },
+                files:[
+                    {
+                        expand: true,
+                        cwd: './app/scripts',
+                        src: ['*.coffee'],
+                        dest: './app/scripts',
+                        ext: '.js'
+                    }
+                ]
+            }
+
         }
     });
 
@@ -409,4 +428,5 @@ module.exports = function (grunt) {
     ]);
 
     grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
 };
