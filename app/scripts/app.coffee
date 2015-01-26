@@ -1,8 +1,4 @@
-define ['jquery'
-        'angular'
-        'waves'
-        'fullpage'
-], ($, angular) ->
+define ['jquery', 'angular', 'waves', 'fullpage'], ($, angular) ->
   app = angular.module('app', [])
 
   app.factory 'cvService', ['$http', ($http)->
@@ -17,9 +13,11 @@ define ['jquery'
   app.controller 'controller', ['$scope', 'cvService', ($scope, cvService)->
     cvService.content('en').success (data)->
       $scope.cv = data;
+    .error(data) ->
     $scope.changeLanguage = ->
       cvService.changeLanguage().success (data)->
         $scope.cv = data;
+      .error(data) ->
   ]
 
   app.directive 'profile', ->
@@ -36,6 +34,8 @@ define ['jquery'
     menu: '#menu'
     navigation: true
     slidesNavigation: true
-    afterRender: -> Waves.displayEffect()
-    afterResize: -> $.fn.fullpage.reBuild()
+    afterRender: ->
+      Waves.displayEffect()
+    afterResize: ->
+      $.fn.fullpage.reBuild()
   })

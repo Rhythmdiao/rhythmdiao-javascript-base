@@ -349,11 +349,11 @@ module.exports = function (grunt) {
         coffee: {
             compile: {
                 options: {
-                    bare:true,
-                    join:true,
-                    sourceMap:false
+                    bare: true,
+                    join: true,
+                    sourceMap: false
                 },
-                files:[
+                files: [
                     {
                         expand: true,
                         cwd: './app/scripts',
@@ -363,7 +363,13 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-
+        },
+        less: {
+            development: {
+                files: {
+                    "./app/styles/main2.css": "./app/styles/main.less"
+                }
+            }
         }
     });
 
@@ -429,4 +435,5 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-less');
 };
