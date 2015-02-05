@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>FullScreen Backgrounds - fullPage.js</title>
+    <title>resume</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
@@ -21,8 +21,8 @@
     <li data-menuanchor="firstPage"><a href="#profile">Profile</a></li>
     <li data-menuanchor="secondPage"><a href="#experience">Experience</a></li>
     <li data-menuanchor="thirdPage"><a href="#education">Education</a></li>
-    <li data-menuanchor="fourthPage"><a href="#education">Skill</a></li>
-    <li data-menuanchor="fifthPage"><a href="#education">Summary</a></li>
+    <li data-menuanchor="fourthPage"><a href="#skill">Skill</a></li>
+    <li><a href="#" ng-click="changeLanguage()">{{cv.language}}</a></li>
 </ul>
 
 
@@ -51,12 +51,11 @@
             <h1>Education</h1>
         </div>
     </div>
-</div>
-
-<div id="infoMenu">
-    <ul>
-        <li><button ng-click="changeLanguage()">{{cv.language}}</button></li>
-    </ul>
+    <div class="section" id="skill">
+        <div class="intro">
+            <h1>Skill</h1>
+        </div>
+    </div>
 </div>
 </body>
 </html>

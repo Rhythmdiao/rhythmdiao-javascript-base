@@ -367,7 +367,7 @@ module.exports = function (grunt) {
         less: {
             development: {
                 files: {
-                    "./app/styles/main2.css": "./app/styles/main.less"
+                    "./app/styles/main.css": "./app/styles/main.less"
                 }
             }
         }
