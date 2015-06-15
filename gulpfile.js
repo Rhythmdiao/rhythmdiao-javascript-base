@@ -1,44 +1,52 @@
 var gulp = require('gulp'),
-  util = require('gulp-util'),
+  gutil = require('gulp-util'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
-  src = './app/',
-  bower_src = './bower_components/';
+  rimraf = require('gulp-rimraf'),
+  sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('js', function () {
-  var dest = 'js/lib/';
-  gulp.src(bower_src + 'angularjs/angular.js')
-    .pipe(gulp.dest(src + dest));
+var paths = {
+  src: './app/',
+  js_dest: 'js/lib/',
+  css_dest: 'css/lib/',
+  scripts: ['./bower_components/angularjs/angular.js',
+    './bower_components/fullpage.js/jquery.fullPage.js',
+    './bower_components/fullpage.js/vendors/jquery.easings.min.js',
+    './bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
+    './bower_components/jquery/dist/jquery.js',
+    './bower_components/requirejs/require.js',
+    './bower_components/waves/dist/waves.js'
+  ],
+  css: ['./bower_components/fullpage.js/jquery.fullPage.css',
+    './bower_components/icono/icono.min.css',
+    './bower_components/waves/dist/waves.css'
+  ]
+};
 
-  gulp.src(bower_src + 'fullpage.js/jquery.fullPage.js')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'fullpage.js/vendors/jquery.easings.min.js')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'fullpage.js/vendors/jquery.slimscroll.min.js')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'jquery/dist/jquery.js')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'requirejs/require.js')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'waves/dist/waves.js')
-    .pipe(gulp.dest(src + dest));
+gulp.task('js', ['clean'], function () {
+  gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src + paths.js_dest));
 });
 
-gulp.task('css', function () {
-  var dest = 'css/lib/';
-  gulp.src(bower_src + 'fullpage.js/jquery.fullPage.css')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'icono/icono.min.css')
-    .pipe(gulp.dest(src + dest));
-
-  gulp.src(bower_src + 'waves/dist/waves.css')
-    .pipe(gulp.dest(src + dest));
+gulp.task('css', ['clean'], function () {
+  gulp.src(paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src + paths.css_dest));
 });
 
-gulp.task('default', ['js', 'css']);
+gulp.task('clean', function () {
+  gulp.src(paths.src + '/' + paths.js_dest + '*.js', {read: false})
+    .pipe(rimraf());
+  gulp.src(paths.src + '/' + paths.css_dest + '*.css', {read: false})
+    .pipe(rimraf());
+});
+
+gulp.task('watch', ['css', 'js'], function () {
+  gulp.watch('./app/js/app.js');
+});
+
+gulp.task('dev', ['watch'], function () {
+});
