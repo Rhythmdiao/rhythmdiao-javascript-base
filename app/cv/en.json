@@ -1,12 +1,16 @@
-{"language": "中文",
-    "profile": {
-        "firstName": "Yuxing",
-        "lastName": "Ma",
-        "nickName": "rhythmdiao",
-        "email": "rhythmdiao@163.com",
-        "location": "Beijing, China"
-    },
-    "education": {
-    },
-    "summary": "A positive, passionate and honest person with definitely full time CS academic education and work experience backgrounds. Specialized both in front and back end object-oriented programming and system, with professional, modern, and efficient tech skills in software engineering, including of requirement, analysis, implementation, testing and evaluation. Pursuing solid and pure interpersonal relationship, concentrating on enhancing technical capability, and coordinately working as a team member with aspiration. That every problem deserves one or more solutions."
+{
+  "language": "中文",
+  "profile": {
+    "firstName": "Yuxing",
+    "lastName": "Ma",
+    "nickName": "rhythmdiao",
+    "email": "rhythmdiao@163.com",
+    "location": "Beijing, China"
+  },
+  "education": {
+    "MSc": "2011.9-2012.12 University of Nottingham, United Kindom, Information Technology M.Sc",
+    "Major": "2007.9-2011.6 Capital Normal University, Beijing China, Intelligence Science and Technology BEng.",
+    "Minor": "2007.9-2011.6 Capital Normal University, Beijing China, Minor Psychology B.S"
+  },
+  "summary": "A positive, passionate and honest person with definitely full time CS academic education and work experience backgrounds. Specialized both in front and back end object-oriented programming and system, with professional, modern, and efficient tech skills in software engineering, including of requirement, analysis, implementation, testing and evaluation. Pursuing solid and pure interpersonal relationship, concentrating on enhancing technical capability, and coordinately working as a team member with aspiration. That every problem deserves one or more solutions."
 }

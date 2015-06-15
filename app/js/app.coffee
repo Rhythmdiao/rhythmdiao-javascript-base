@@ -13,11 +13,9 @@ define ['jquery', 'angular', 'waves', 'fullpage'], ($, angular) ->
   app.controller 'controller', ['$scope', 'cvService', ($scope, cvService)->
     cvService.content('en').success (data)->
       $scope.cv = data;
-    .error(data) ->
     $scope.changeLanguage = ->
       cvService.changeLanguage().success (data)->
         $scope.cv = data;
-      .error(data) ->
   ]
 
   app.directive 'profile', ->
@@ -25,6 +23,12 @@ define ['jquery', 'angular', 'waves', 'fullpage'], ($, angular) ->
     restrict: 'EA'
     replace: 'true'
     templateUrl: 'views/profile.html'
+
+  app.directive 'education', ->
+    scope: true
+    restrict: 'EA'
+    replace: 'true'
+    templateUrl: 'views/education.html'
 
   angular.element(document).ready ->
     angular.bootstrap(document, ['app'])

@@ -1,6 +1,7 @@
 body {
   font-family: 'microsoft yahei', Arial, sans-serif;
 }
+
 .shadow {
   -moz-box-shadow: 0 3px 10px #888;
   -webkit-box-shadow: 0 3px 10px #888;
@@ -9,6 +10,7 @@ body {
   -moz-box-transition: .3s;
   transition: .3s;
 }
+
 /*
  *top menu
  */
@@ -22,6 +24,7 @@ body {
   margin: 0;
   width: 100%;
 }
+
 #menu li {
   display: inline-block;
   margin: 10px;
@@ -31,44 +34,47 @@ body {
   width: 100px;
   text-align: center;
 }
+
 #menu li .active {
   background: #ffffff;
 }
+
 #menu li a {
   padding: 9px 18px;
   display: block;
   text-decoration: none;
   color: #ffffff;
 }
+
 #menu li:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
 .section {
   color: #3f3f3f;
 }
+
 .section .wrap {
   width: 100%;
   height: 100%;
   margin-top: 110px;
   position: relative;
 }
+
 .section .wrap .left {
   width: 50%;
   float: left;
 }
+
 .section .wrap .right {
   width: 50%;
   float: right;
 }
+
 .section h1 {
   display: block;
   font-size: 2em;
   margin: 0, 0, 20px, 0;
   padding: 0;
   text-align: center;
-}
-.section .item {
-  text-align: left;
-  line-height: 1.6em;
-  font-size: 1.2em;
 }

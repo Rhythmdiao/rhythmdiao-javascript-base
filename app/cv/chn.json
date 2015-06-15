@@ -1,11 +1,12 @@
-{"language": "English",
-    "profile": {
-        "firstName": "Yuxing",
-        "lastName": "Ma",
-        "nickName": "rhythmdiao",
-        "email": "哈哈哈",
-        "location": "Beijing, China"
-    },
-    "education": {
-    }
+{
+  "language": "English",
+  "profile": {
+    "firstName": "Yuxing",
+    "lastName": "Ma",
+    "nickName": "年轻人，趁年轻多学点英语吧!",
+    "email": "rhythmdiao@163.com",
+    "location": "Beijing, China"
+  },
+  "education": "年轻人，趁年轻多学点英语吧!",
+  "summary": "年轻人，趁年轻多学点英语吧!"
 }
