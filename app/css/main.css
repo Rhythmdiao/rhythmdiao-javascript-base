@@ -7,7 +7,7 @@ body {
   -webkit-box-shadow: 0 3px 10px #888;
   box-shadow: 0 3px 10px #888;
   -webkit-transition: .3s;
-  -moz-box-transition: .3s;
+  -moz-transition: .3s;
   transition: .3s;
 }
 
@@ -74,7 +74,7 @@ body {
 .section h1 {
   display: block;
   font-size: 2em;
-  margin: 0, 0, 20px, 0;
+  margin-top: 20px;
   padding: 0;
   text-align: center;
 }

@@ -3,7 +3,9 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
   rimraf = require('gulp-rimraf'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+  webserver = require('gulp-webserver');
+
 
 var paths = {
   src: './app/',
@@ -45,8 +47,16 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', ['css', 'js'], function () {
-  gulp.watch('./app/js/app.js');
+  // gulp.watch('./app/js/app.js');
 });
 
 gulp.task('dev', ['watch'], function () {
+  gulp.src('app').pipe(webserver({
+    host: 'localhost',
+    port: '8000',
+    path: '/app',
+    livereload: true,
+    directoryListing: false,
+    open: 'http://localhost:8000/app'
+  }));
 });

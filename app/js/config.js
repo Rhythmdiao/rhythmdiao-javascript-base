@@ -1,15 +1,19 @@
 require.config({
   baseUrl: '/app/js',
   paths: {
-    jquery: 'lib/jquery',
-    angular: 'lib/angular',
-    slimscroll: 'lib/jquery.slimscroll.min',
-    fullpage: 'lib/jquery.fullPage',
-    waves: 'lib/waves'
+    jquery: '/app/js/lib/jquery',
+    angular: '/app/js/lib/angular',
+    slimscroll: '/app/js/lib/jquery.slimscroll.min',
+    easings: '/app/js/lib/jquery.easings.min',
+    waves: '/app/js/lib/waves',
+    fullpage: '/app/js/lib/jquery.fullPage'
   },
   shim: {
     angular: {exports: 'angular'},
-    fullpage: {exports: 'fullpage'}
+    fullpage: {
+      deps: ['jquery'],
+      exports: 'fullpage'
+    }
   }
 });
 
