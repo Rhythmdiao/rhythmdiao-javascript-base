@@ -1,7 +1,8 @@
 {
   "name": "rhythmdiao",
-  "private": true,
   "dependencies": {
+    "flat-color-icons": "~1.0.2",
+    "icono": "*",
     "jquery": "~1.11.1",
     "fullpage.js": "~2.5.5",
     "requirejs": "~2.1.15"
@@ -9,5 +10,23 @@
   "devDependencies": {
     "waves": "0.5.4",
     "angularjs": "~1.4.0"
-  }
+  },
+  "version": "0.0.1",
+  "homepage": "https://github.com/Rhythmdiao/rhythmdiao-javascript-base",
+  "authors": [
+    "rhythmdiao"
+  ],
+  "main": "index.html",
+  "keywords": [
+    "rhythmdiao",
+    "js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
