@@ -1,64 +1,58 @@
-define(['jquery', 'angular', 'waves', 'fullpage'], function ($, angular) {
-  var app = angular.module('app', [])
-    .factory('cvService', [
-      '$http', function ($http) {
-        var cv;
-        return cv = {
-          language: 'en',
-          content: function (language) {
-            return $http.get('cv/' + (language === 'en' || 'chn' ? language : cv.language) + '.json', {
-              cache: true
-            });
-          },
-          changeLanguage: function () {
-            return cv.content(cv.language = cv.language === 'en' ? 'chn' : 'en');
-          }
-        };
-      }
-    ])
-    .controller('controller', [
-      '$scope', 'cvService', function ($scope, cvService) {
-        cvService.content('en').success(function (data) {
+'use strict';
+var $ = require('./lib/jquery.js')
+  , waves = require('node-waves')
+  , easings = require('./lib/jquery.easings.min.js')
+  , slimscroll = require('./lib/jquery.slimscroll.min.js')
+  , angular = require('angular')
+  , contentComponent = require('./contentComponent.js')
+  , componentHandler = require('./lib/material.js')
+  , fullpage = require('./lib/jquery.fullpage.js')
+  ;
+var app = angular.module('app', [])
+  .factory('cvService', [
+    '$http', function ($http) {
+      var cv;
+      return cv = {
+        content: function (language) {
+          return $http.get('cv/' + (language === '中文' ? 'chn' : 'en') + '.json', {
+            cache: true
+          });
+        }
+      };
+    }
+  ])
+  .controller('controller', [
+    '$scope', 'cvService', function ($scope, cvService) {
+      cvService.content().success(function (data) {
+        return $scope.cv = data;
+      });
+      $scope.changeLanguage = function () {
+        var element = $(".buttonComponent");
+        return cvService.content(element.html()).success(function (data) {
           return $scope.cv = data;
         });
-        return $scope.changeLanguage = function () {
-          return cvService.changeLanguage().success(function (data) {
-            return $scope.cv = data;
-          });
-        };
-      }
-    ])
-    .directive('profile', function () {
-      return {
-        scope: true,
-        restrict: 'EA',
-        replace: 'true',
-        templateUrl: 'views/profile.html'
       };
-    })
-    .directive('education', function () {
-      return {
-        scope: true,
-        restrict: 'EA',
-        replace: 'true',
-        templateUrl: 'views/education.html'
-      };
-    });
-
-  angular.element(document).ready(function () {
-    return angular.bootstrap(document, ['app']);
-  });
-
-  return $("#fullpage").fullpage({
-    sectionsColor: ['#fff', '#0cf', '#09f', '#06f', '##03f'],
-    menu: '#menu',
-    navigation: true,
-    slidesNavigation: true,
-    afterRender: function () {
-      return Waves.displayEffect();
-    },
-    afterResize: function () {
-      return $.fn.fullpage.reBuild();
+      return $scope;
     }
+  ])
+  .directive('profile', function () {
+    return {
+      scope: true,
+      restrict: 'EA',
+      replace: 'true',
+      templateUrl: 'views/profile.html'
+    };
+  })
+  .directive('education', function () {
+    return {
+      scope: true,
+      restrict: 'EA',
+      replace: 'true',
+      templateUrl: 'views/education.html'
+    };
   });
+
+angular.element(document).ready(function () {
+  waves.init();
+  return angular.bootstrap(document, ['app']);
 });

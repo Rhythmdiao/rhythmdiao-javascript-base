@@ -1,11 +1,12 @@
-var gulp = require('gulp'),
-  gutil = require('gulp-util'),
-  uglify = require('gulp-uglify'),
-  concat = require('gulp-concat'),
-  rimraf = require('gulp-rimraf'),
-  sourcemaps = require('gulp-sourcemaps'),
-  webserver = require('gulp-webserver');
-
+var gulp = require('gulp')
+  , gutil = require('gulp-util')
+  , uglify = require('gulp-uglify')
+  , concat = require('gulp-concat')
+  , rimraf = require('gulp-rimraf')
+  , sourcemaps = require('gulp-sourcemaps')
+  , webserver = require('gulp-webserver')
+  , browserify = require('browserify')
+  , source = require('vinyl-source-stream');
 
 var paths = {
   src: './app/',
@@ -17,27 +18,14 @@ var paths = {
     './bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
     './bower_components/jquery/dist/jquery.js',
     './bower_components/requirejs/require.js',
-    './bower_components/waves/dist/waves.js'
+    './bower_components/waves/dist/waves.js',
+    './bower_components/material-design-lite/material.js'
   ],
   css: ['./bower_components/fullpage.js/jquery.fullPage.css',
-    './bower_components/icono/icono.min.css',
-    './bower_components/waves/dist/waves.css'
+    './bower_components/waves/dist/waves.css',
+    './bower_components/material-design-lite/material.css'
   ]
 };
-
-gulp.task('js', ['clean'], function () {
-  gulp.src(paths.scripts)
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.src + paths.js_dest));
-});
-
-gulp.task('css', ['clean'], function () {
-  gulp.src(paths.css)
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.src + paths.css_dest));
-});
 
 gulp.task('clean', function () {
   gulp.src(paths.src + '/' + paths.js_dest + '*.js', {read: false})
@@ -46,11 +34,28 @@ gulp.task('clean', function () {
     .pipe(rimraf());
 });
 
-gulp.task('watch', ['css', 'js'], function () {
-  // gulp.watch('./app/js/app.js');
+gulp.task('js', function () {
+  gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src + paths.js_dest));
 });
 
-gulp.task('dev', ['watch'], function () {
+gulp.task('css', function () {
+  gulp.src(paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src + paths.css_dest));
+});
+
+gulp.task('browserify', function () {
+  browserify('./app/js/app.js')
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./app/js/'));
+});
+
+gulp.task('dev', ['browserify'], function () {
   gulp.src('app').pipe(webserver({
     host: 'localhost',
     port: '8000',

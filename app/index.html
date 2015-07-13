@@ -8,12 +8,30 @@
   <meta name="keywords" content=""/>
   <meta name="Resource-type" content="Document"/>
   <link rel="icon" href="/app/images/avatar.png"/>
-  <link rel="stylesheet" href="/app/css/lib/icono.min.css"/>
-  <link rel="stylesheet" type="text/css" href="/app/css/lib/jquery.fullPage.css"/>
-  <link rel="stylesheet" type="text/css" href="/app/css/lib/waves.css"/>
-  <link rel="stylesheet" type="text/css" href="/app/css/main.css"/>
-  <script src="/app/js/lib/require.js"
-          data-main="/app/js/config.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/lib/jquery.fullPage.css"/>
+  <link rel="stylesheet" type="text/css" href="css/lib/waves.css"/>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/lib/material.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/lib/jquery.fullPage.js"></script>
+  <script src="js/lib/material.js"></script>
+  <script src="js/bundle.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#fullpage").fullpage({
+        sectionsColor: ['#fff', '#0cf', '#09f', '#06f', '##03f'],
+        menu: '#menu',
+        navigation: true,
+        slidesNavigation: true,
+        afterResize: function () {
+          return $.fn.fullpage.reBuild();
+        }
+      });
+    });
+  </script>
+
 </head>
 <body ng-controller="controller">
 <ul id="menu">
@@ -21,7 +39,7 @@
   <li data-menuanchor="secondPage"><a href="#experience">Experience</a></li>
   <li data-menuanchor="thirdPage"><a href="#education">Education</a></li>
   <li data-menuanchor="fourthPage"><a href="#skill">Skill</a></li>
-  <li><a href="#" ng-click="changeLanguage()">{{cv.language}}</a></li>
+  <li><a href="#" ng-click="changeLanguage()" class="buttonComponent">中文</a></li>
 </ul>
 
 
@@ -35,7 +53,6 @@
     <div class="slide" id="slide1" data-anchor="slide1">
       <div class="intro">
         <h1>Experience</h1>
-
         <p></p>
       </div>
     </div>

@@ -1,15 +1,14 @@
 {
   "name": "rhythmdiao",
   "dependencies": {
-    "flat-color-icons": "~1.0.2",
-    "icono": "*",
     "jquery": "~1.11.1",
     "fullpage.js": "~2.5.5",
-    "requirejs": "~2.1.15"
+    "material-design-icons": "~2.0.0"
   },
   "devDependencies": {
     "waves": "0.5.4",
-    "angularjs": "~1.4.0"
+    "angularjs": "~1.4.0",
+    "material-design-lite": "~1.0.0"
   },
   "version": "0.0.1",
   "homepage": "https://github.com/Rhythmdiao/rhythmdiao-javascript-base",
