@@ -50,3 +50,11 @@ var app = angular.module('app', [])
   });
 
 window.Waves = waves;
+
+module.exports = function(){
+  angular.element(document).ready(function () {
+    window.Waves.init();
+    return angular.bootstrap(document, ['app']);
+  });
+};
+
