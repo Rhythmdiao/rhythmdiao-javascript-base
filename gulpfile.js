@@ -49,7 +49,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('browserify', function () {
-  browserify('./app/js/app.js')
+  browserify('./app/js/start.js')
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./app/js/'));

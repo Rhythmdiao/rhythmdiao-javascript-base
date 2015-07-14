@@ -3,10 +3,7 @@ var $ = require('./lib/jquery.js')
   , waves = require('node-waves')
   , easings = require('./lib/jquery.easings.min.js')
   , slimscroll = require('./lib/jquery.slimscroll.min.js')
-  , angular = require('angular')
   , contentComponent = require('./contentComponent.js')
-  , componentHandler = require('./lib/material.js')
-  , fullpage = require('./lib/jquery.fullpage.js')
   ;
 var app = angular.module('app', [])
   .factory('cvService', [
@@ -52,7 +49,4 @@ var app = angular.module('app', [])
     };
   });
 
-angular.element(document).ready(function () {
-  waves.init();
-  return angular.bootstrap(document, ['app']);
-});
+window.Waves = waves;
