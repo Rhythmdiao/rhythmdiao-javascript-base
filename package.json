@@ -20,9 +20,7 @@
     "gulp-util": "^3.0.5",
     "gulp-watch": "^4.2.4",
     "gulp-webserver": "^0.9.1",
-    "mongodb": "^2.0.35",
-    "mongoose": "^4.0.6",
-    "node-waves": "^0.7.2",
+    "material-design-icons": "^2.0.0",
     "restify": "^3.0.3",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -30,6 +28,30 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "jquery": "^2.1.4"
-  }
+    "jquery": "^2.1.4",
+    "material-design-lite": "^1.0.0-3"
+  },
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rhythmdiao/rhythmdiao-javascript-base.git"
+  },
+  "keywords": [
+    "rhythmdiao",
+    "js",
+    "npm"
+  ],
+  "author": "rhythmdiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rhythmdiao/rhythmdiao-javascript-base/issues"
+  },
+  "homepage": "https://github.com/Rhythmdiao/rhythmdiao-javascript-base"
 }

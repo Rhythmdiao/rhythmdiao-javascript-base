@@ -12,18 +12,15 @@ var paths = {
   src: './app/',
   js_dest: 'js/lib/',
   css_dest: 'css/lib/',
-  scripts: ['./bower_components/angularjs/angular.js',
-    './bower_components/fullpage.js/jquery.fullPage.js',
-    './bower_components/fullpage.js/vendors/jquery.easings.min.js',
-    './bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
-    './bower_components/jquery/dist/jquery.js',
-    './bower_components/requirejs/require.js',
-    './bower_components/waves/dist/waves.js',
-    './bower_components/material-design-lite/material.js'
+  scripts: ['./node_modules/jquery/dist/jquery.min.js'
+    , './node_modules/fullpage.js/vendors/jquery.easings.min.js'
+    , './node_modules/fullpage.js/vendors/jquery.slimscroll.min.js'
+    , './node_modules/fullpage.js/jquery.fullPage.js'
+    , './node_modules/material-design-lite/material.min.js'
   ],
-  css: ['./bower_components/fullpage.js/jquery.fullPage.css',
-    './bower_components/waves/dist/waves.css',
-    './bower_components/material-design-lite/material.css'
+  css: ['./node_modules/fullpage.js/jquery.fullPage.css',
+    './node_modules/node-waves/dist/waves.css',
+    './node_modules/material-design-lite/material.css'
   ]
 };
 

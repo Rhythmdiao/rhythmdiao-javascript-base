@@ -1,3 +1,3 @@
-var angular = require('angular')
-  , app = require('./app.js');
+'use strict';
+var app = require('./app.js');
 app();

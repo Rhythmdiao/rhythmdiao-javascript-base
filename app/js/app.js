@@ -1,10 +1,11 @@
 'use strict';
-var $ = require('./lib/jquery.js')
-  , waves = require('node-waves')
-  , easings = require('./lib/jquery.easings.min.js')
-  , slimscroll = require('./lib/jquery.slimscroll.min.js')
-  , contentComponent = require('./contentComponent.js')
+var $ = require('jquery')
+  , angular = require('angular')
+  , easings = require('./lib/jquery.easings.min')
+  , slimscroll = require('./lib/jquery.slimscroll.min')
+  , contentComponent = require('./contentComponent')
   ;
+
 var app = angular.module('app', [])
   .factory('cvService', [
     '$http', function ($http) {
@@ -49,11 +50,11 @@ var app = angular.module('app', [])
     };
   });
 
-window.Waves = waves;
+window.componentHandler = componentHandler;
 
-module.exports = function(){
+module.exports = function () {
   angular.element(document).ready(function () {
-    window.Waves.init();
+    componentHandler.upgradeAllRegistered();
     return angular.bootstrap(document, ['app']);
   });
 };
