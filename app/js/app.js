@@ -4,6 +4,7 @@ var $ = require('jquery')
   , easings = require('./lib/jquery.easings.min')
   , slimscroll = require('./lib/jquery.slimscroll.min')
   , contentComponent = require('./contentComponent')
+  , logger = require('./log')
   ;
 
 var app = angular.module('app', [])

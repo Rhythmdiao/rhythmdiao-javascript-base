@@ -45,14 +45,14 @@ gulp.task('css', function () {
     .pipe(gulp.dest(paths.src + paths.css_dest));
 });
 
-gulp.task('browserify', function () {
+gulp.task('bundle', function () {
   browserify('./app/js/start.js')
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./app/js/'));
 });
 
-gulp.task('dev', ['browserify'], function () {
+gulp.task('dev', ['bundle'], function () {
   gulp.src('app').pipe(webserver({
     host: 'localhost',
     port: '8000',
