@@ -5,6 +5,7 @@ var $ = require('jquery')
   , slimscroll = require('./lib/jquery.slimscroll.min')
   , contentComponent = require('./contentComponent')
   , logger = require('./log')
+  , gameComponent = require('./gameComponent')
   ;
 
 var app = angular.module('app', [])
@@ -13,7 +14,7 @@ var app = angular.module('app', [])
       var cv;
       return cv = {
         content: function (language) {
-          return $http.get('cv/' + (language === '中文' ? 'chn' : 'en') + '.json', {
+          return $http.get('cv/' + (language === 'ENGLISH' ? 'chn' : 'en') + '.json', {
             cache: true
           });
         }
@@ -48,6 +49,14 @@ var app = angular.module('app', [])
       restrict: 'EA',
       replace: 'true',
       templateUrl: 'views/education.html'
+    };
+  })
+  .directive('game', function () {
+    return {
+      scope: true,
+      restrict: 'EA',
+      replace: 'true',
+      templateUrl: 'views/tic_tac_toe.html'
     };
   });
 

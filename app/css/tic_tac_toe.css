@@ -1,0 +1,19 @@
+.grid {
+  width: 80%;
+  height: auto;
+}
+
+.cell {
+  display: block;
+  float: left;
+  width: 25%;
+  height: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+  text-decoration: none;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+  color:#fff;
+}

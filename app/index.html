@@ -2,7 +2,7 @@
 <html>
 <head lang=en>
   <meta charset=utf-8>
-  <title>resume</title>
+  <title>rhythmdiao</title>
   <meta name="author" content="rhythmdiao"/>
   <meta name="description" content="personal resume"/>
   <meta name="keywords" content="html,css,js"/>
@@ -11,13 +11,14 @@
   <link rel="stylesheet" type="text/css" href="css/lib/jquery.fullPage.css"/>
   <link rel="stylesheet" type="text/css" href="css/main.css"/>
   <link rel="stylesheet" type="text/css" href="css/lib/material.css"/>
+  <link rel="stylesheet" type="text/css" href="css/tic_tac_toe.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body ng-controller="controller">
 <div class="layout-transparent mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Menu</span>
+      <span class="mdl-layout-title"></span>
 
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
@@ -38,17 +39,15 @@
       <a class="mdl-navigation__link" href="#skill">Skill</a>
     </nav>
   </div>
-  <main class="mdl-layout__content">
-  </main>
 </div>
 
-<div id="fullpage">
-  <div class="section" id="profile">
-    <div class="wrap shadow">
+<section id="fullpage">
+  <section class="section" id="profile">
+    <div class="wrap">
       <data-profile/>
     </div>
-  </div>
-  <div class="section" id="experience">
+  </section>
+  <section class="section" id="experience">
     <div class="slide" id="slide1" data-anchor="slide1">
       <div class="intro">
         <h1>Experience</h1>
@@ -60,20 +59,26 @@
     <div class="slide" id="slide2" data-anchor="slide2">
       <h1>Slide 2</h1>
     </div>
-  </div>
+  </section>
 
-  <div class="section" id="education">
-    <div class="wrap shadow">
+  <section class="section" id="education">
+    <div class="wrap">
       <data-education/>
     </div>
-  </div>
+  </section>
 
-  <div class="section" id="skill">
-    <div class="wrap shadow">
+  <section class="section" id="skill">
+    <div class="wrap">
       <h1>Skill</h1>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="section" id="game">
+    <div class="wrap">
+      <data-game/>
+    </div>
+  </section>
+</section>
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/lib/jquery.fullPage.js"></script>
 <script src="js/lib/material.min.js"></script>
@@ -81,7 +86,7 @@
 <script type="text/javascript">
   $(document).ready(function () {
     $("#fullpage").fullpage({
-      sectionsColor: ['#212121', '#424242', '#212121', '#424242'],
+      sectionsColor: ['#22B573', '#26B1B6', '#129DE7', '#ED6461','#22B573'],
       navigation: true,
       slidesNavigation: true,
       afterResize: function () {
