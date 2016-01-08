@@ -21,6 +21,7 @@ var dependency = {
     , './node_modules/fullpage.js/vendors/jquery.slimscroll.min.js'
     , './node_modules/fullpage.js/jquery.fullPage.js'
     , './node_modules/material-design-lite/material.min.js'
+    ,'./node_modules/log4js/lib/log4js.js'
   ],
   css: ['./node_modules/fullpage.js/jquery.fullPage.css',
     './node_modules/node-waves/dist/waves.css',
