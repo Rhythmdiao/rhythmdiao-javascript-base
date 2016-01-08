@@ -24,7 +24,9 @@
     "log4js": "^0.6.26",
     "material-design-icons": "^2.0.0",
     "restify": "^3.0.3",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -1,3 +1,5 @@
 'use strict';
 var app = require('./app.js');
 app();
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzdGFydC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgYXBwID0gcmVxdWlyZSgnLi9hcHAuanMnKTtcbmFwcCgpO1xuIl0sImZpbGUiOiJzdGFydC5qcyIsInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

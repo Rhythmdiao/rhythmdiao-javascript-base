@@ -1,0 +1,69 @@
+body {
+  font-family: 'microsoft yahei', Arial, sans-serif;
+}
+
+.shadow {
+  -moz-box-shadow: 0 3px 10px #888;
+  -webkit-box-shadow: 0 3px 10px #888;
+  box-shadow: 0 3px 10px #888;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+}
+
+.section {
+}
+
+.section .wrap {
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.section #avatar {
+  height: 300px;
+  width: auto;
+  line-height:300px;
+}
+
+.section #avatar .icon{
+  height: 100px;
+  width: 100px;
+  margin-left:80px;
+  font-size:48px
+}
+
+.section .wrap .left {
+  order: 1;
+  -webkit-order: 1;
+  flex: auto;
+  -webkit-flex: auto;
+  float: left;
+  height: auto;
+  width: 50%;
+}
+
+.section .wrap .right {
+  order: 1;
+  -webkit-order: 1;
+  flex: auto;
+  -webkit-flex: auto;
+  float: right;
+  height: auto;
+  width: 50%;
+}
+
+.section h1 {
+  display: block;
+  font-size: 2em;
+  margin-top: 20px;
+  padding: 0;
+  text-align: center;
+}

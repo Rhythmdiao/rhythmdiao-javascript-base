@@ -12,6 +12,10 @@ var paths = {
   src: './app/',
   js_dest: 'js/lib/',
   css_dest: 'css/lib/',
+  img_dest: 'images/'
+};
+
+var dependency = {
   scripts: ['./node_modules/jquery/dist/jquery.min.js'
     , './node_modules/fullpage.js/vendors/jquery.easings.min.js'
     , './node_modules/fullpage.js/vendors/jquery.slimscroll.min.js'
@@ -24,6 +28,12 @@ var paths = {
   ]
 };
 
+var sources = {
+  scripts: ['./src/js/*.js',
+    './src/js/**/*.js'],
+  css: ['./src/css/*.css']
+};
+
 gulp.task('clean', function () {
   gulp.src(paths.src + '/' + paths.js_dest + '*.js', {read: false})
     .pipe(rimraf());
@@ -31,18 +41,26 @@ gulp.task('clean', function () {
     .pipe(rimraf());
 });
 
-gulp.task('js', function () {
-  gulp.src(paths.scripts)
+gulp.task('dependency', function () {
+  gulp.src(dependency.scripts)
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.src + paths.js_dest));
-});
-
-gulp.task('css', function () {
-  gulp.src(paths.css)
+  gulp.src(dependency.css)
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.src + paths.css_dest));
+});
+
+gulp.task('source', function () {
+  gulp.src(sources.css)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src +"/css"));
+  gulp.src(sources.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.src + "/js"));
 });
 
 gulp.task('bundle', function () {
@@ -50,6 +68,9 @@ gulp.task('bundle', function () {
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./app/js/'));
+});
+
+gulp.task('prepare', ['source', 'dependency', 'bundle'], function () {
 });
 
 gulp.task('dev', ['bundle'], function () {

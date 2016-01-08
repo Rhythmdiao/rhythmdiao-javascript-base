@@ -1,5 +1,5 @@
 'use strict';
-var logger = require('./log'),
+var logger = require('../log/log'),
   game = {
     cell: [],
     turn: 1,
