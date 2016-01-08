@@ -4,8 +4,9 @@ var $ = require('jquery')
   , easings = require('./lib/jquery.easings.min')
   , slimscroll = require('./lib/jquery.slimscroll.min')
   , languageComponent = require('./vendor/language_component')
-  , logger = require('./log/log')
+  //, logger = require('./log/log')
   , gameComponent = require('./game/game_component')
+  , storage = require('./component/local_storage')
   ;
 
 var app = angular.module('app', [])

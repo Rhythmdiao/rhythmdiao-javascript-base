@@ -31,7 +31,8 @@ var dependency = {
 
 var sources = {
   scripts: ['./src/js/*.js',
-    './src/js/**/*.js'],
+    './src/js/**/*.js',
+  '!./src/js/log/log.js'],
   css: ['./src/css/*.css']
 };
 

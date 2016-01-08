@@ -1,6 +1,7 @@
 'use strict';
-var game = require('./tic_tac_toe'),
-  logger = require('../log/log');
+var game = require('./tic_tac_toe')
+  //logger = require('../log/log')
+  ;
 
 function GameComponent(element) {
   this.element_ = element;

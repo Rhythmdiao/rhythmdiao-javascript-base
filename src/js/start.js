@@ -1,3 +1,3 @@
 'use strict';
-var app = require('./app.js');
+var app = require('./app');
 app();
